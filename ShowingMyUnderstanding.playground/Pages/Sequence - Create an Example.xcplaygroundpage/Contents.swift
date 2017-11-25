@@ -21,9 +21,41 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 300, height: 300)
+let canvas = Canvas(width: 400, height: 400)
+//background
+canvas.fillColor = Color.red
+canvas.drawRectangle(centreX: 200, centreY: 200, width: 500, height: 500)
+//no fill
+canvas.drawShapesWithFill = false
 
-// Replace this comment and add your code below...
+//repeating rectangle
+canvas.drawShapesWithBorders = true
+canvas.defaultBorderWidth = 5
+canvas.borderColor = Color.green
+for y in stride(from: 0, through: 400, by: 50) {
+    canvas.drawRectangle(centreX: 100, centreY: 200, width: 100, height: y)
+}
+
+//2nd repeating rectangle
+for y in stride(from: 0, through: 400, by: 50) {
+    canvas.drawRectangle(centreX: 300, centreY: 200, width: 100, height: y)
+}
+//circle design
+canvas.borderColor = Color.yellow
+for x in stride(from: 0, through: 400, by: 50) {
+    for y in stride(from: 0, through: 400, by: 50) {
+        canvas.drawEllipse(centreX: 0, centreY: 0, width: x, height: y)
+    }
+}
+
+//2nd circle design
+canvas.borderColor = Color.blue
+for x in stride(from: 400, through: 0, by: -50) {
+    for y in stride(from: 400, through: 0, by: -50) {
+        canvas.drawEllipse(centreX: 400, centreY: 400, width: x, height: y)
+    }
+}
+
 
 /*:
  ## Template code
