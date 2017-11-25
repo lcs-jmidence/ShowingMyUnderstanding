@@ -17,9 +17,30 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 300, height: 300)
+let canvas = Canvas(width: 400, height: 400)
 
-// Replace this command and add your code below...
+
+canvas.drawRectangle(centreX: 200, centreY: 200, width: 500, height: 500)
+
+//face
+canvas.fillColor = Color.white
+canvas.drawEllipse(centreX: 200, centreY: 200, width: 300, height: 300)
+
+//eyes
+canvas.fillColor = Color.black
+canvas.drawEllipse(centreX: 150, centreY: 250, width: 50, height: 50)
+canvas.drawEllipse(centreX: 250, centreY: 250, width: 50, height: 50)
+
+let number = random(from: 0, toButNotIncluding: 2)
+
+//mouths
+if number == 0 {
+    canvas.drawRectangle(centreX: 200, centreY: 100, width: 100, height: 200)
+}
+
+if number == 1 {
+    canvas.drawEllipse(centreX: 200, centreY: 100, width: 100, height: 100)
+}
 
 /*:
  ## Template code
