@@ -17,9 +17,34 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 300, height: 300)
+let canvas = Canvas(width: 500, height: 500)
+canvas.drawShapesWithFill = true
+canvas.borderColor = Color.red
+canvas.fillColor = Color.black
+canvas.drawRectangle(centreX: 250, centreY: 250, width: 600, height: 600)
 
-// Replace this comment and add your code below...
+//canvas.drawAxes()
+canvas.translate(byX: 250, byY: 250)
+canvas.defaultBorderWidth = 6
+
+//rotate canvas
+canvas.rotate(by: -45)
+canvas.borderColor = Color.blue
+canvas.drawShapesWithFill = true
+canvas.fillColor = Color.init(hue: 180, saturation: 100, brightness: 100, alpha: 100)
+// draw diamonds
+for x in stride(from: Int(0), through: 350, by: 50) {
+    canvas.drawRectangle(centreX: 0, centreY: 0, width: x, height: x)
+}
+
+canvas.drawShapesWithFill = false
+for diamond in stride(from: 0, through: 350, by: 50) {
+    canvas.drawRectangle(centreX: 0, centreY: 0, width: diamond, height: diamond)
+}
+
+
+
+
 
 /*:
  ## Template code
